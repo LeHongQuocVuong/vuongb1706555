@@ -1,0 +1,44 @@
+.modal-dialog-max-width {
+    max-width: unset;
+}
+
+#EmailError,
+#PassError {
+    color: red;
+    background-color: blanchedalmond;
+    padding-left: 10px;
+    border-radius: 4px;
+    margin-top: 1px;
+}
+
+.btn-DangNhap {
+    padding: unset;
+}
+
+#home-tab.nav-link.active {
+    border-bottom-color: unset;
+    border-bottom: blue solid 3px;
+    color: blue;
+}
+
+#home-tab.nav-link.active .DangNhap_left {
+    display: block;
+}
+
+#home-tab.nav-link.active .DangKy_left {
+    display: none;
+}
+
+#profile-tab.nav-link.active {
+    border-bottom-color: unset;
+    border-bottom: blue solid 3px;
+    color: blue;
+}
+
+#profile-tab.nav-link.active .DangKy_left {
+    display: block;
+}
+
+#profile-tab.nav-link.active .DangNhap_left {
+    display: none;
+}

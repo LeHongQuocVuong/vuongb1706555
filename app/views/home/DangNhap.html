@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhâp</title>
+
+    <!-- Liên kết CSS Bootstrap -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
+    <!-- CSS OwlCarousel -->
+    <link rel="stylesheet" href="assets/vendor/OwlCarousel/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/vendor/OwlCarousel/css/owl.theme.default.min.css" type="text/css">
+    <!-- Custom css - Các file css do chúng ta tự viết -->
+    <link rel="stylesheet" href="assets/css/DangNhap.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css">
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <!-- Vuejs -->
+    <div id="app">
+
+        <!-- Menu search -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0px;">
+            <div class="container">
+
+                <a class="navbar-brand" href="index.html" style="color:#d4af37; font-weight: bold; font-size: 30px;">
+                    <img src="assets/img/logo/logo1.png" alt="" style="width: 50px; height: 50px;">
+
+                    KING</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent_1" aria-controls="navbarSupportedContent_1"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent_1">
+
+
+                    <form class="mx-auto" style="flex-basis: 500px;">
+                        <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                                aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item pl-2">
+                            <a class="btn btn-outline-secondary" href="GioHang.html" role="button">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                Giỏ hàng
+                            </a>
+                        </li>
+                        <li class="nav-item pl-2">
+                            <a class="btn btn-outline-secondary" href="DangNhap.html" role="button">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                Đăng nhập
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Menu  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning" style="padding: 0px;">
+            <div class="container">
+                <a class="navbar-brand nav-a" href="index.html" title="Trang chủ">
+                    <b>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        Trang chủ
+                    </b>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <a class="nav-a" href="dienthoai.html" title="Điện thoại di động, smartphone">
+                        <i class="fa fa-mobile fa-a" aria-hidden="true"></i>
+                        <b>Điện thoại</b>
+                    </a>
+                    <a class="nav-a" href="laptop.html" title="Máy tính xách tay">
+                        <i class="fa fa-laptop" aria-hidden="true"></i>
+                        <b>Laptop</b>
+                    </a>
+                    <a class="nav-a" href="tablet.html" title="Máy tính bảng">
+                        <i class="fa fa-tablet" aria-hidden="true"></i>
+                        <b>Tablet</b>
+                    </a>
+                    <a class="nav-a" href="phukien.html" title="Phụ kiện điện thoại, laptop, Tablet">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                        <b>Phụ kiện</b>
+                    </a>
+                    <a class="nav-a" href="dongho.html" title="smartwatch">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-smartwatch" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 5h.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H14V5z" />
+                            <path fill-rule="evenodd"
+                                d="M8.5 4.5A.5.5 0 0 1 9 5v3.5a.5.5 0 0 1-.5.5H6a.5.5 0 0 1 0-1h2V5a.5.5 0 0 1 .5-.5z" />
+                            <path fill-rule="evenodd"
+                                d="M4.5 2h7A2.5 2.5 0 0 1 14 4.5v7a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 11.5v-7A2.5 2.5 0 0 1 4.5 2zm0 1A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7z" />
+                            <path
+                                d="M4 2.05v-.383C4 .747 4.746 0 5.667 0h4.666C11.253 0 12 .746 12 1.667v.383a2.512 2.512 0 0 0-.5-.05h-7c-.171 0-.338.017-.5.05zm0 11.9c.162.033.329.05.5.05h7c.171 0 .338-.017.5-.05v.383c0 .92-.746 1.667-1.667 1.667H5.667C4.747 16 4 15.254 4 14.333v-.383z" />
+                        </svg>
+                        <b>Đồng hồ thông minh</b>
+                    </a>
+                    <a class="nav-a" href="gioithieu.html" title="">
+
+                        <b>Giới thiệu</b>
+                    </a>
+                    <a class="nav-a" href="lienhe.html" title="">
+
+                        <b>Liên hệ</b>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Đăng nhập -->
+        <div class="container-md p-md-4">
+            <div class="row">
+                <div class="col-md-4 d-none d-md-block d-lg-block bg-white p-md-5 border-right">
+                    <div class="DangNhap_left" v-if="DangNhap_left_check == true">
+                        <div class="row">
+                            <h2>Đăng nhập</h2>
+                        </div>
+                        <div class="row">
+                            <p>Đăng nhập để theo dõi đơn hàng, lưu
+                                danh sách sản phẩm yêu thích, nhận
+                                nhiều ưu đãi hấp dẫn.</p>
+                        </div>
+                        <div class="row">
+                            <img src="assets/img/icon/DangNhap.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="DangKy_left" v-if="DangKy_left_check ==true">
+                        <div class="row">
+                            <h2>Đăng ký</h2>
+                        </div>
+                        <div class="row">
+                            <p>Tạo tài khoản để theo dõi đơn hàng, lưu
+                                danh sách sản phẩm yêu thích, nhận
+                                nhiều ưu đãi hấp dẫn.</p>
+                        </div>
+                        <div class="row">
+                            <img src="assets/img/icon/DangNhap.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-8 bg-white p-md-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                        aria-controls="home" aria-selected="true" v-on:click="DangNhap_left()">Đăng
+                                        nhập</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                        aria-controls="profile" aria-selected="false" v-on:click="DangKy_left()">Tạo tài
+                                        khoản</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active p-3" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+
+                                    <form action="" method="post" name="frmLogin" id="frmLogin" novalidate="true" @submit="kiemTraDangNhap">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="txtEmail">Email</label>
+                                            </div>
+                                            <div class="col-md-9">
+
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1">
+                                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" placeholder="Email"
+                                                            name="txtEmail" id="txtEmail" required autofocus title="Vui lòng nhập Email">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="pass">Password</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="basic-addon1">
+                                                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="password" class="form-control" id="pass"
+                                                            name="pass" placeholder="Mật khẩu" required title="Vui lòng nhập mật khẩu">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-10">
+                                                <div class="row py-2">
+                                                    <div class="col-md-12">
+                                                        <a href="#" class="text-primary">Quên mật
+                                                            khẩu?</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row py-2">
+                                                    <div class="col-md-12">
+                                                        <button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#TaoTaiKhoan">
+                                                            Đăng nhập</button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row py-2">
+                                                    <div class="col-md-12">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-block btn-DangNhap" data-toggle="modal" data-target="#TaoTaiKhoan">
+                                                            <div class="row">
+                                                                <div class="col-md-1 d-none d-lg-block">
+                                                                    <i class="fa fa-facebook border-dark border-right px-3 py-2"
+                                                                        style="width: 55px;" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="col-md-11 py-1">
+                                                                    Đăng nhập bằng Facebook
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row py-2">
+                                                    <div class="col-md-12">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-block btn-DangNhap" data-toggle="modal" data-target="#TaoTaiKhoan">
+                                                            <div class="row">
+                                                                <div class="col-md-1 d-none d-lg-block">
+                                                                    <i class="fa fa-google-plus border-dark border-right px-3 py-2 "
+                                                                        style="width: 55px;" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="col-md-11 py-1">
+                                                                    Đăng nhập bằng Google
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row py-2">
+                                                    <div class="col-md-12">
+                                                        <button type="button"
+                                                            class="btn btn-primary btn-block btn-DangNhap" data-toggle="modal" data-target="#TaoTaiKhoan">
+                                                            <div class="row">
+                                                                <div class="col-md-1 d-none d-lg-block">
+                                                                    <i class="fa fa-twitter border-dark border-right px-3 py-2 "
+                                                                        style="width: 55px;" aria-hidden="true"></i>
+                                                                </div>
+                                                                <div class="col-md-11 py-1">
+                                                                    Đăng nhập bằng Twitter
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal mời tạo tài khoản -->
+                                                <div class="modal fade" id="TaoTaiKhoan" tabindex="-1" aria-labelledby="TaoTaiKhoanLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header">
+                                                          <h5 class="modal-title" id="TaoTaiKhoanLabel">Vui lòng tạo tài khoản trước khi đăng nhâp</h5>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                          </button>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                          <button type="button" class="btn btn-primary" id="btnTaoTK" data-dismiss="modal">Tạo tài khoản</button>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+
+                                </div>
+                                <div class="tab-pane fade p-3" id="profile" role="tabpanel"
+                                    aria-labelledby="profile-tab">
+                                    <form action="" method="post" class="frm-DangKy" novalidate="true" @submit="kiemTraDuLieu">
+                                        <div class="row">
+                                            <div class="alert alert-danger" role="alert" v-if="hienThiThongBaoLoi()">
+                                                <b>Vui lòng kiểm tra lại các lỗi sau:</b>
+                                                <ul>
+                                                    <li v-for="error in errors">{{ error }}</li>
+                                                </ul>
+                                            </div>
+                                            <!-- Nếu không có lỗi thì hiển thị thông báo chào mừng trong vùng này, sử dụng ALERT BOOTSTRAP -->
+                                            <div class="alert alert-success" role="alert" v-if="hienThiThongBaoChaoMung()">
+                                                <b>Dữ liệu đã nhập hợp lệ -> sẽ được gởi đến Server...</b>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="DN-txtHoTen">Họ tên</label>
+                                            </div>
+                                            <div class="col-md-9">
+
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Nhập họ tên" name="DN-txtHoTen"
+                                                            id="DN-txtHoTen" v-model="DN_hoten" autofocus>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="DN-txtEmail">Email</label>
+                                            </div>
+                                            <div class="col-md-9">
+
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <!-- <input type="email" class="form-control"
+                                                            placeholder="Nhập email" name="DN-txtEmail" id="DN-txtEmail"
+                                                            required
+                                                            pattern="^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]{2,24}$"
+                                                            title="Email phải có dạng abc@def.ghk"> -->
+                                                        <input type="email" class="form-control"
+                                                            placeholder="Nhập email" name="DN-txtEmail" id="DN-txtEmail"
+                                                            v-model="DN_email">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="DN-txtSDT">Số điện thoại</label>
+                                            </div>
+                                            <div class="col-md-9">
+
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <!-- <input type="tel" class="form-control"
+                                                            placeholder="Nhập số điện thoại" name="DN-txtSDT"
+                                                            id="DN-txtSDT" required pattern="^[0-9]{10}$"
+                                                            title="Số điện thoại phải có 10 số"> -->
+                                                        <input type="tel" class="form-control"
+                                                            placeholder="Nhập số điện thoại" name="DN-txtSDT"
+                                                            v-model="DN_SDT">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="DN-Pass">Mật khẩu</label>
+                                            </div>
+                                            <div class="col-md-9">
+
+                                                <div class="form-group">
+                                                    <div class="input-group ">
+                                                        <!-- <input type="password" class="form-control"
+                                                            placeholder="Nhập mật khẩu" name="DN-Pass" id="DN-Pass"
+                                                            required
+                                                            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d])[\S]{6,16}"
+                                                            title="Mật khẩu phải có ít nhất 1 chữ số, 1 ký tự đặc biệt, 1 chữ hoa, 1 chữ thường và có độ dài từ 6-16 ký tự"> -->
+                                                        <input type="password" class="form-control"
+                                                            placeholder="Nhập mật khẩu" name="DN-Pass" id="DN-Pass"
+                                                            v-model="DN_Pass">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3 pb-2">
+                                                <label for="DN-Pass" style="width: 150px;">Giới
+                                                    tính</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" id="DK-ra-Nam" name="DK-ra-GioiTinh"
+                                                        class="custom-control-input" checked>
+                                                    <label class="custom-control-label" for="DK-ra-Nam">Nam</label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                    <input type="radio" id="DK-ra-Nu" name="DK-ra-GioiTinh"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label" for="DK-ra-Nu">Nữ</label>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="DN-Pass">Ngày sinh</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="date" class="form-control" value="2020-09-08" name="DK-date" id="DK-date">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="form-group pt-3">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" type="checkbox" value="1"
+                                                            id="DK-DongY" aria-describedby="DK-DongY" required checked>
+                                                        <label class="custom-control-label" for="DK-DongY">
+                                                            Đồng ý với các điều khoản và điều kiện
+                                                        </label>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="row py-2">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-warning btn-block">
+                                                    Đăng ký
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid d-none d-md-block" style="background-color: white; margin-top: 10px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row" style="padding: 10px;">
+                            <h4>CÁCH THỨC THANH TOÁN</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 icon-pay icon-bg" style="background-position: -740px -768px;"></div>
+                            <div class="col-md-2 icon-pay icon-bg" style="background-position: -309px -768px;"></div>
+                            <div class="col-md-2 icon-pay icon-bg" style="background-position: -262px -828px;"></div>
+                            <div class="col-md-2 icon-pay icon-bg" style="background-position: -189px -829px;"></div>
+                            <div class="col-md-2 icon-pay icon-bg" style="background-position: -554px -830px;"></div>
+                            <div class="col-md-2 icon-pay icon-bg" style="background-position: -896px -527px;"></div>
+                        </div>
+
+                        <div class="row" style="padding: 10px;">
+                            <h4>LIÊN HỆ</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a href="https://www.facebook.com/lehongquocvuong" class="btn" title="Facebook">
+                                    <img src="assets/img/icon/face.png" alt="" style="height: 40px;">
+                                </a>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="" class="btn" title="Youtube">
+                                    <img src="assets/img/icon/youtube.png" alt="" style="height: 40px;">
+                                </a>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="" class="btn" title="Zalo">
+                                    <img src="assets/img/icon/zalo.png" alt="" style="height: 40px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row" style="padding: 10px;">
+                                    <h4>DỊCH VỤ GIAO HÀNG</h4>
+                                </div>
+                                <div class="row">
+                                    <div class="m-2"
+                                        style="background-image: url(assets/img/icon/ListLogo2.png);background-position: -142px -951px; width: 198px; height: 55px; background-size: 1000px;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 m-2"
+                                        style="background-image: url(assets/img/icon/ListLogo2.png);background-position: -499px -533px; width: 92px; height: 38px; background-size: 600px;">
+                                    </div>
+                                    <div class="col-md-4 m-2"
+                                        style="background-image: url(assets/img/icon/ListLogo2.png);background-position: -0px -220px; width: 89px; height: 40px; background-size: 509px;">
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-4 mt-2"
+                                        style="background-image: url(assets/img/icon/ListLogo2.png);background-position: -172.5px -266px; width: 81px; height: 38px; background-size: 500px;">
+                                    </div>
+
+                                    <div class="col-md-8 mt-2"><img src="assets/img/icon/LogoBest.png" alt=""
+                                            style="height: 30px" class="img-fluid"></div>
+                                </div>
+                                <div class="row m-2">
+                                    <img src="assets/img/icon/LogoAha.png" alt="" style="height: 30px">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row" style="padding: 10px;">
+                                    <h4>CHỨNG NHẬN</h4>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+                                        <img src="assets/img/icon/ChungNhan.png" alt="" style="height: 60px;">
+                                    </div>
+                                    <div class="col-md-6 my-4">
+                                        <img src="assets/img/icon/ChungNhan4.png" alt="" style="height: 40px;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+                                        <img src="assets/img/icon/ChungNhan2.png" alt="" style="height: 80px;">
+                                    </div>
+                                    <div class="col-md-6 my-4">
+                                        <img src="assets/img/icon/ChungNhan5.png" alt="" style="height: 40px;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 my-2">
+                                        <img src="assets/img/icon/ChungNhan3.png" alt="" style="height: 42px;">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Back to top -->
+        <button id="myBtn" title="Go to top"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+
+
+    </div>
+    <!-- Hết div Vuejs -->
+
+    <!-- Liên kết Jquery -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <!-- Liên kết PopperJS -->
+    <script src="assets/vendor/popperjs/popper.min.js"></script>
+    <!-- Liên kết Bootstrap -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <!-- OwlCarousel -->
+    <script src="assets/vendor/OwlCarousel/js/owl.carousel.min.js"></script>
+    <!-- Vuejs -->
+    <script src="assets/vendor/vuejs/vue.js"></script>
+    <!-- Custom script - Các file js do mình tự viết -->
+    <script src="assets/js/DangNhap.js"></script>
+
+    <script>
+        
+    </script>
+
+</body>
+
+</html>
