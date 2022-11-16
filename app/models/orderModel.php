@@ -66,8 +66,8 @@ EOT;
         return $this->db->update($table_order, $data, $cond);
     }
 
-    public function deleteorder($table_order, $cond)
+    public function deleteOrder($table_order, $cond)
     {
-        return $this->db->delete($table_order, $cond);
+        return $this->db->deleteOrder($table_order, $cond);
     }
 }

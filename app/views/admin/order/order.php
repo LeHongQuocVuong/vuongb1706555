@@ -36,7 +36,7 @@
             ?>
             <h2 class="my-2" style="text-align: center;">Danh sách Đơn đặt hàng</h2>
 
-            <p><a href="<?php echo BASE_URL; ?>order_admin/_show_add_order" class="btn btn-xs btn-primary">
+            <p><a href="<?php echo BASE_URL; ?>order_admin/add_order" class="btn btn-xs btn-primary">
                     <i alt="Edit" class="fa fa-pencil"> Thêm</i></a>
             </p>
             <!-- datatables -->

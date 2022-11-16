@@ -377,4 +377,36 @@ class order_admin extends dController
             header("Location:" . BASE_URL . "order_admin/show_edit_order/" . $id);
         }
     }
+    public function delete_order($id)
+    {
+        Session::checkSession(); //Kiểm tra đã đăng nhập rồi mới cho vào
+
+        $orderModel = $this->load->model('orderModel');
+        $table_order = 'order';
+        $result_order = $orderModel->orderbyid($table_order, $id);
+
+        if ($result_order[0]['dh_tongtien'] >= 0) {
+            //Xóa chi tiết đơn hàng
+            $orderDetailModel = $this->load->model('orderDetailModel');
+            $table_order_detail = 'order_detail';
+            $cond_order_detail = "order_detail.dh_ma='$id'";
+
+            $resultDeleteOrderDetail = $orderDetailModel->deleteorderDetail($table_order_detail, $cond_order_detail);
+
+            //Xoá đơn hàng
+            $cond_order = "order.dh_ma='$id'";
+            $result = $orderModel->deleteorder($table_order, $cond_order);
+
+            $message = "Đã xoá đơn đặt hàng thành công";
+            //Lưu session
+            Session::setArray("error", $message);
+            header("Location:" . BASE_URL . 'order_admin/list_order');
+        } else {
+            $error = "Chưa có đơn hàng";
+            //Lưu session
+
+            Session::setArray("error", $error);
+            header("Location:" . BASE_URL . 'order_admin/list_order');
+        }
+    }
 }

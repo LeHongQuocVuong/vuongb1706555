@@ -86,6 +86,12 @@ class Database extends PDO   //ket noi CSDL
         return $this->exec($sql);
     }
 
+    public function deleteOrder($table, $cond, $limit = 1)
+    {
+        $sql = "DELETE FROM `$table` WHERE $cond LIMIT $limit";
+        return $this->exec($sql);
+    }
+
     public function deleteAll($table, $cond)
     {
         $sql = "DELETE FROM $table WHERE $cond";
