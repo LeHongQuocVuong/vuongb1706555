@@ -13,30 +13,11 @@ class order_admin extends dController
         $this->list_order();
     }
 
-    // public function order()
-    // {
-    //    
-
-    //     $this->load->view('admin/header');
-    //     $this->load->view('admin/menu');
-    //     $this->load->view('admin/order/order');
-    //     $this->load->view('admin/footer');
-    // }
-
-    // public function add_order()
-    // {
-    //     $this->load->view('admin/header');
-    //     $this->load->view('admin/menu');
-    //     $this->load->view('admin/order/add_order');
-    //     $this->load->view('admin/footer');
-    // }
-
     public function list_order()
     {
 
         // Session::checkSession(); //Kiểm tra đã đăng nhập rồi mới cho vào
-        // $this->load->view('admin/header');
-        // $this->load->view('admin/menu');
+
         //Danh sach don hang
         $orderModel = $this->load->model('orderModel');
         $table_order = 'order';

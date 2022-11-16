@@ -19,7 +19,7 @@ class login extends dController
         // Session::checkSession(); //Kiểm tra đã đăng nhập rồi thì chuyển vào dashboard
         Session::init();
         if (Session::get("login") == true) {
-            header("Location:" . BASE_URL . "login/dashboard");
+            header("Location:" . BASE_URL . "order_admin/list_order");
         }
 
         $this->load->view('admin/login');
@@ -58,7 +58,7 @@ class login extends dController
             Session::set("id_user", $result[0]['id_user']);
             Session::set("type_user", $result[0]['type_user']);
 
-            header("Location:" . BASE_URL . "login/dashboard");
+            header("Location:" . BASE_URL . "order_admin/list_order");
         }
     }
 

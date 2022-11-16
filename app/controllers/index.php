@@ -124,10 +124,6 @@ class index extends dController
 
     public function notfound()
     {
-        $this->load->view('header');
-
-        $this->load->view('404');
-
-        $this->load->view('footer');
+        $this->homepage();
     }
 }

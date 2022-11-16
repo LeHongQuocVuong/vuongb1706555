@@ -24,14 +24,12 @@ class productModel extends dModel
 			img.id_product_image, img.name_product_image,
 			detail.id_product_detail, detail.display_product_detail, detail.os_product_detail,
 			detail.main_camera_product_detail, detail.selfie_camera_product_detail,
-			detail.cpu_product_detail, detail.ram_product_detail, detail.rom_product_detail, detail.battery_product_detail,
-			km.id_sale, km.title_sale, km.desc_sale, km.start_sale, km.end_sale
+			detail.cpu_product_detail, detail.ram_product_detail, detail.rom_product_detail, detail.battery_product_detail
         FROM product AS sp
         JOIN category_product AS lsp ON sp.id_category_product = lsp.id_category_product
         JOIN product_producer AS nsx ON sp.id_product_producer = nsx.id_product_producer
         LEFT JOIN product_image AS img ON sp.id_product = img.id_product
         LEFT JOIN product_detail AS detail ON sp.id_product = detail.id_product
-        LEFT JOIN sale AS km on sp.id_sale = km.id_sale
 		  ORDER BY sp.id_product ASC;
 EOT;
         // $sql = "SELECT * FROM $table ORDER BY id_product DESC";
@@ -49,14 +47,12 @@ EOT;
 			img.id_product_image, img.name_product_image,
 			detail.id_product_detail, detail.display_product_detail, detail.os_product_detail,
 			detail.main_camera_product_detail, detail.selfie_camera_product_detail,
-			detail.cpu_product_detail, detail.ram_product_detail, detail.rom_product_detail, detail.battery_product_detail,
-			km.id_sale, km.title_sale, km.desc_sale, km.start_sale, km.end_sale
+			detail.cpu_product_detail, detail.ram_product_detail, detail.rom_product_detail, detail.battery_product_detail
         FROM product AS sp
         JOIN category_product AS lsp ON sp.id_category_product = lsp.id_category_product
         JOIN product_producer AS nsx ON sp.id_product_producer = nsx.id_product_producer
         LEFT JOIN product_image AS img ON sp.id_product = img.id_product
         LEFT JOIN product_detail AS detail ON sp.id_product = detail.id_product
-        LEFT JOIN sale AS km on sp.id_sale = km.id_sale
         WHERE sp.id_product=:id
 		  ORDER BY sp.id_product ASC;
 EOT;
